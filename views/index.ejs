@@ -15,9 +15,9 @@
 		<div id='wall'>
 			<% for(m in messages){%>
 			<div class='messages'>
-				<h4>Name:<%= messages[m].messenger %></h4><br>
-				<h4>Message:<%= messages[m].content %></h4><br>
-				<h4>Posted On:<%= messages[m].createdAt %></h4><br>
+				<h4>Name: <%= messages[m].messenger %></h4><br>
+				<h4>Message: <%= messages[m].content %></h4><br>
+				<h4>Posted On: <%= messages[m].createdAt %></h4><br>
 				<% if(messages[m].comments){%>
 						<% for (c in messages[m].comments) {%>
 							<div class='comments'>
