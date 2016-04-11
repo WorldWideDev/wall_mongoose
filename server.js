@@ -11,7 +11,7 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 app.get('/', function (req, res){
-	Message.find({}).populate('comments').exec(function (err, messages){
+	Message.find({}).sort('-createdAt').populate('comments').exec(function (err, messages){
 		if(err){
 			res.json(err)
 		}else{

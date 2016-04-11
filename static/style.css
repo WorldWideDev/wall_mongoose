@@ -10,11 +10,20 @@ h4, h5{
 	margin: 0 auto;
 	text-align: center;
 }
+#wall{
+	border: groove 10px;
+	display: inline-block;
+	width: 570px;
+}
 .messages{
+	vertical-align: top;
 	border: solid;
 	display: inline-block;
+	margin: 15px;
+	padding: 5px;
 }
 .comments{
 	border: dotted 1px;
 	display: inline-block;
+	padding: 5px;
 }
