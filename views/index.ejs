@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>WALL</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class='container'>
+		<h1>the wall.</h1>
+		<form action='/message' method='POST'>
+			Name: <br><input type='text' name='name'><br>
+			Message: <br><textarea name='content' rows='4'></textarea><br>
+			<input type='submit' value='POST'>
+		</form>
+		<% for(m in messages){%>
+		<div class='messages'>
+			<h4>Name:<%= messages[m].messenger %></h4><br>
+			<h4>Message:<%= messages[m].content %></h4><br>
+			<% if(messages[m].comments){%>
+					<% for (c in messages[m].comments) {%>
+						<div class='comments'>
+							<h5>Name: <%= messages[m].comments[c].commenter %></h5><br>
+							<h5>Comment: <%= messages[m].comments[c].content %></h5><br>
+						</div>
+					<%}%>
+				
+			<%}%>
+			<form action='/comment/<%= messages[m]._id %>' method='POST'>
+				Name: <br><input type='text' name='name'><br>
+				Comment: <br><textarea name='content' rows='4'></textarea><br>
+				<input type='submit' value='POST'>
+			</form>
+		</div>
+		<%}%>
+	</div>
+</body>
+</html>
